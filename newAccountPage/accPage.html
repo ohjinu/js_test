@@ -9,12 +9,15 @@
         .container {
             width: 500px;
         }
+        /* .name {
+            width: 50%;
+        } */
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box1">
-            <form>
+            <div>
                 <div class="mb-3">
                     <label for="id" class="form-label">ID</label>
                   <input type="text" class="form-control" id="id" placeholder="아이디를 입력해주세요">
@@ -26,9 +29,75 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                  </div>
+                    
+                  
                 
+                <div class="address d-flex">
+                <div class="col-sm-3">
+                    <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                    <input type="text" class="form-control" id="specificSizeInputName">
+                  </div>
+
+                  <div class="col-sm-4 ps-2">
+                    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
+                    <div class="input-group">
+                      <div class="input-group-text">@</div>
+                      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 ps-2 mb-3">
+                    <label class="visually-hidden" for="domain">Preference</label>
+                    <select class="form-select" id="domain">
+                      <option selected>Choose...</option>
+                      <option value="1">naver.com</option>
+                      <option value="2">google.com</option>
+                      <option value="3">daum.net</option>
+                    </select>
+                </div>
+                </div>
+
+                  <div class="phone">
+                    <label for="number" class="form-label">휴대폰번호 인증</label>
+                    <select class="form-select">
+                        <option selected>통신사</option>
+                        <option value="1">KT</option>
+                        <option value="2">SKT</option>
+                        <option value="3">LG</option>
+                      </select>
+
+                      <div class="input-group my-3 num">
+                        <input type="text" class="form-control">
+                        <button class="btn btn-outline-secondary" type="button" id="cer">인증번호 요청</button>
+                      </div>
+                  </div>
+
+                <div class="d-flex">
+                    <div class="name col-6">
+                        <label for="name" class="form-label">이름</label>
+                        <input type="text" class="form-control" id="name" placeholder="이름 입력">
+                    </div>
+                    
+                    <div class="birth col-6">
+                        <label for="birth" class="form-label">생년월일</label>
+                        <input type="text" class="form-control" id="birth" placeholder="생년월일 6자리">
+                    </div>
+                </div>
+                <br>
+                <div class="prom">
+                    <label for="prom">약관 동의</label>
+                    <div class="box">
+
+                    </div>
+                </div>
+
+
+
+                <button type="button" class="btn btn-outline-primary d-flex justify-content-center">회원가입</button>
+
+                  
+                
+            </div>
               </form>
         </div>
     </div>

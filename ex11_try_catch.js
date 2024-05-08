@@ -36,16 +36,6 @@ function generateError () {
 }
 
 setInterval(generateError, 1000) // 1.5초 단위로 generateError()함수 반복호출
-
-/*
-에러종류
--
--
--
--
--
-*/
-
 try{
     // 1. SyntaxError
     // let num null 
