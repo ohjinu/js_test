@@ -11,9 +11,9 @@
             width: 500px;
         }
 
-        .box1 {
-            /* border: 1px solid red; */
-        }
+        /* .box1 {
+            border: 1px solid red; 
+        } */
     </style>
 </head>
 <body>
@@ -31,11 +31,11 @@
                   <input type="password" class="form-control" id="pwd">
                 </div>
                 <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="rememer">
+                  <input type="checkbox" class="form-check-input" id="remember">
                   <label class="form-check-label" for="rememer">아이디 기억하기</label>
                 </div>
                 <div class="logIn d-flex justify-content-end mb-3">
-                    <button type="submit" class="btn btn-primary me-3">로그인</button>
+                    <button type="submit" class="btn btn-primary me-3" id="login" >로그인</button>
                 </div>
             </form>
 
@@ -49,6 +49,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">회원가입</button>
                 </div>
+                
               </form>
             
 
@@ -57,7 +58,24 @@
 
 
     <script>
-        
+        const remember = document.querySelector('#remember')
+        const logIn = document.querySelector('#login')
+        const Id = document.querySelector('#id')
+        // console.log(remember, logIn)
+
+        var setCookie = function(name, value, exp) {
+            var data = new Data()
+        }
+
+
+        // function cookie(){
+        //     if(remember === true) {
+        //         login.addEventListener('click',()=>{
+        //             document.cookie = Id.value
+        //         })
+        //     }
+        // }
+
     </script>
 </body>
 </html>
