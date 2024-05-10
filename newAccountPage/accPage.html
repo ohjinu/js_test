@@ -18,7 +18,8 @@
     <div class="container">
         <div class="box1">
             <div>
-                <div class="mb-3">
+              <!-- 아이디, 비번 -->
+                <div class="mb-3"> 
                     <label for="id" class="form-label">ID</label>
                   <input type="text" class="form-control" id="id" placeholder="아이디를 입력해주세요">
                 </div>
@@ -27,36 +28,35 @@
                   <input type="password" class="form-control" id="pwd" placeholder="비밀번호를 입력해주세요">
                   <div id="emailHelp" class="form-text">비밀번호는 영어, 숫자 포함 10자리 이상</div>
                 </div>
-                <div class="mb-3">
+
+                  <!-- 이메일 -->
                     <label for="email" class="form-label">Email address</label>
-                    
-                  
-                
                 <div class="address d-flex">
-                <div class="col-sm-3">
-                    <label class="visually-hidden" for="specificSizeInputName">Name</label>
-                    <input type="text" class="form-control" id="specificSizeInputName">
-                  </div>
-
-                  <div class="col-sm-4 ps-2">
-                    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-                    <div class="input-group">
-                      <div class="input-group-text">@</div>
-                      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
+                    <div class="col-sm-3">
+                      <label class="visually-hidden" for="email1">email1</label>
+                      <input type="text" class="form-control" id="email1">
                     </div>
+
+                    <div class="col-sm-4 ps-2">
+                      <label class="visually-hidden" for="email2">email2</label>
+                      <div class="input-group">
+                        <div class="input-group-text">@</div>
+                        <input type="text" class="form-control" id="email2">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4 ps-2 mb-3">
+                      <label class="visually-hidden" for="domain">Preference</label>
+                      <select class="form-select" id="domain">
+                        <option selected >Choose...</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="google.com">google.com</option>
+                        <option value="daum.net">daum.net</option>
+                      </select>
                   </div>
-
-                  <div class="col-sm-4 ps-2 mb-3">
-                    <label class="visually-hidden" for="domain">Preference</label>
-                    <select class="form-select" id="domain">
-                      <option selected>Choose...</option>
-                      <option value="1">naver.com</option>
-                      <option value="2">google.com</option>
-                      <option value="3">daum.net</option>
-                    </select>
                 </div>
-                </div>
-
+                <div class="look_easy">
+                <!-- 휴대폰 인증 -->
                   <div class="phone">
                     <label for="number" class="form-label">휴대폰번호 인증</label>
                     <select class="form-select">
@@ -72,6 +72,7 @@
                       </div>
                   </div>
 
+                <!-- 이름, 생년월일 -->
                 <div class="d-flex">
                     <div class="name col-6">
                         <label for="name" class="form-label">이름</label>
@@ -84,6 +85,7 @@
                     </div>
                 </div>
                 <br>
+                <!-- 약관 -->
                 <div class="prom">
                     <label for="prom" class="mb-3">약관 동의</label>
                     <div class="allChk">
@@ -111,15 +113,30 @@
                     </div>
                 </div>
 
-
+                <!-- 회원가입 -->
               <div class=" mt-4 d-flex justify-content-end">
                 <button type="button" class="btn btn-outline-primary">회원가입</button>
               </div>
-                  
-                
-            </div>
-              </form>
+            </div> <!-- lookeasy end -->
         </div>
     </div>
+    </div>
+
+    <script>
+      const email2 = document.querySelector('#email2')
+      const domain = document.querySelector('#domain')
+
+      console.log(email2)
+
+
+      domain.addEventListener('change',(e)=>{
+        // console.log(domain.value)
+        let dom = domain.value
+        
+      })
+      email2.innerHTML =
+      
+      
+    </script>
 </body>
 </html>

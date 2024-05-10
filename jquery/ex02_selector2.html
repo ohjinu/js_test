@@ -6,40 +6,144 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-    <script src="js/ex01_02.js"></script>
+    <!-- <script src="js/ex01_02.js"></script> -->
+    <!-- <script src="js/ex01_03.js"></script> -->
+    <!-- <script src="js/ex01_04.js"></script> -->
+
+    <style>
+        .box8 {
+            width: 300px; height: 300px;
+            padding: 30px; margin: 30px;
+            border: 10px solid red;
+
+        }
+    </style>
     <script>
-        $(function () {
-            // $('.box2 a[target]').css('color','#f00')
-            // $('.box2 a[href^=https]').css('color','#f00')
-            // $('.box2 a[href$=net]').css('color','#f00')
-            // $('#member_f :text').css('color','#f00')
-            // $('input[type=text]').css('color','#f00') // 위에 놈이랑 같음
-            // $('#member_f :password').css('background-color','#00f')
-
-            $('.box3 p:hidden').css({
-                'display': 'block',
-                'background':'#ff0'
-            })
-            
-            var z1 = $('.zone1 :selected').val()
-            console.log('선택된 항목', z1)
-
-            var z2 = $('.zone2 :checked').val()
-            console.log('선택된 항목', z2)
-
-            var z3 = $('.zone3 :checked').val()
-            console.log('선택된 항목', z3)
 
 
-            $('#course').on('change',function(){
-                let val = $('#course option:selected').val()
-                console.log(val)
+        $(function (){
+            var box8 = $('.box8')
+            console.log('width:'+box8.width())
+            console.log('height:'+box8.height())
+            console.log('innerwidth:'+box8.innerWidth())
+            console.log('innerheight:'+box8.innerHeight())
+            console.log('outerwidth:'+box8.outerWidth())
+            console.log('outerheight:'+box8.outerHeight())
+
+            const u_name = document.querySelector('#user_name')
+            var userName2 = $('#user_name2')
+            var userId2 = $('#user_id2')
+
+            // console.log("name:", userName.val(), u_name.value)
+            console.log("id:", userId2.val())
+            userName2.val('길순이')
+            console.log("name:", userName2.val())
+
+            // prop()
+            var chk10 = $('#chk10').prop('checked')
+            console.log(chk10)
+            var chk20 = $('#chk20').prop('checked')
+            console.log(chk20)
+
+            //
+            //
+            //
+            $('#chk10').prop('checked', true) // checked 설정
+            $('#chk20').prop('checked', false)
+
+            // 
+            var sel_result = $('#sel10').prop('selectedIndex');
+            console.log(sel_result)
+
+            $('#sel10').on('change', function () {
+                // 1. 
+                let index = $(this).prop('selectedIndex')
+                $(this).find('option').prop('selectedIndex') //console.log("selectedIndex:"+ index)
+                // 2. 
+                //$(this).find('option').eq(index).prop('selected',true)
+                // 3. 
+                //let sel_value = $('#sel10 option:selected').val()
+                //console.log(sel_value)
+
+                // 
+                $(this).find('option').attr('selected',false)
+                // 
+                $(this).find('option').eq(index).attr('selected',true)
             })
         })
+
+
     </script>
 </head>
 <body>
+    <div class="box8">
 
+    </div>
+
+
+    <div class="box7">
+        <div>
+            <input type="checkbox" name="chk10" id="chk10">chk1
+            <input type="checkbox" name="chk20" id="chk20" checked>chk2
+        </div>
+        <div>
+            <select name="sel" id="sel10">
+                <option value="opt10">딸기</option>
+                <option value="opt20" selected>바나나</option>
+                <option value="opt30">오렌지</option>
+                <option value="opt40">사과</option>
+                
+            </select>
+        </div>
+        <div>
+            <label for="user_name2">
+                <input type="text" name="user_name2" id="user_name2" value="홍길동">
+            </label>
+            <label for="user_id2">
+                <input type="text" name="user_id2" id="user_id2" value="hello">
+            </label>
+        </div>
+    </div>
+
+    <hr>
+    <div class="box6">
+        <p>1</p>
+        <p class="block">2</p>
+
+        <p class="to">3</p>
+        <p>4</p>
+    </div>
+
+    <hr>
+    <div class="box5">
+        <p class="name" my="as">홍길동</p>
+        <p class="age">10</p>
+        <p><img src="images/math_img_1.jpg" width="200" alt="가위" border="2"></p>
+    </div>
+
+    <hr>
+    <div class="box4">
+        <section class="inner_1">
+            <p class="txt1"><span>내용1</span></p>
+            <p class="txt2"><strong class="txt1" >내용2</strong></p>
+            <p class="txt3"><span>내용3</span></p>
+            <p class="txt3" style="display:none"><span>내용3-1</span></p>
+            <p>
+                <input type="checkbox" name="chk1" id="chk1" checked>
+                <label for="chk1">체크1</label>
+
+                <input type="checkbox" name="chk2" id="chk2">
+                <label for="chk2">체크2</label>
+            </p>
+        </section>
+        <section class="inner_2">
+            <p><span>내용4</span></p>
+            <p><span>내용5</span></p>
+            <p><span>내용6</span></p>
+        </section>
+    </div>
+
+    <hr>
     <div class="box3">
         <p>내용1</p>
         <p style="display:none">내용2</p>
